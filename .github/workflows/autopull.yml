@@ -1,5 +1,5 @@
 name: Pull Request on Branch Push
-on: [release]
+on: [push]
 jobs:
   pull-request-on-release:
     name: PullRequestAction
@@ -10,10 +10,10 @@ jobs:
       - name: Derive from branch name
         run: |
           # do custom parsing of your code / date to derive a branch from
-          PR_BRANCH_FROM=release-v$(cat VERSION)
+          PR_BRANCH_FROM=release-v
           export "PULL_REQUEST_FROM_BRANCH=${PR_BRANCH_FROM}" >> $GITHUB_ENV
       - name: pull-request-action
         uses: vsoch/pull-request-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PULL_REQUEST_BRANCH: "master"
+          PULL_REQUEST_BRANCH: "main"
