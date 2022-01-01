@@ -1,1 +1,1 @@
-#Live :- https://diploma-cmt-resource.netlify.app/
+Live :- https://diploma-cmt-resource.netlify.app/
